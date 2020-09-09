@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/controller/LoginController.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/service/impl/CustomerService.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/model/BillBorrow.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/web/index.jsp</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/dao/TaiKhoanDAO.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/model/Person.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/controller/HomeController.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/model/Borrow.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/web/view/login.jsp</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/model/Customer.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/dao/ICustomerDAO.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/service/ICustomerService.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/model/Account.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/dao/ConnectToDatabase.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/model/Cart.java</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/admin/Desktop/QuanLyTruyen/src/java/dao/impl/CustomerDAO.java</file>
+        </group>
+    </open-files>
+</project-private>
