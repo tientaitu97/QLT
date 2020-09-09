@@ -9,17 +9,22 @@ package model;
  *
  * @author admin
  */
-public class Customer extends Saft{
+public class Customer{
     private int id;
     private int points;
+    private Person person;
 
     public Customer() {
     }
 
-    public Customer(int id, int points) {
+    public Customer(int id, int points, Person person) {
         this.id = id;
         this.points = points;
+        this.person = person;
     }
+
+  
+    
 
     public int getId() {
         return id;
@@ -36,5 +41,14 @@ public class Customer extends Saft{
     public void setPoints(int points) {
         this.points = points;
     }
-    
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+   
 }

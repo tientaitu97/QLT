@@ -43,7 +43,7 @@ public class LoginController extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        String action = req.getParameter("action");
        if(action != null && action.equals("login")){
-           Account model = FormUtil.toModel.class, request);
+           
        }
     }
     

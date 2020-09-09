@@ -14,8 +14,9 @@ public class Person {
     private String gender;
     private int age;
     private String name;
-    Address adrress;
-    Contact contact;
+    private Address adrress;
+    private Contact contact;
+   
 
     public Person(int id, String gender, int age, String name, Address adrress, Contact contact) {
         this.id = id;

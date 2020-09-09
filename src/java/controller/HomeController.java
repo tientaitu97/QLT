@@ -21,13 +21,18 @@ import service.impl.CustomerService;
  */
 @WebServlet("/customer")
 public class HomeController extends HttpServlet{
-    private ICustomerService customerservice = new CustomerService();
+    private ICustomerService customerService = new CustomerService();
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         String name = req.getParameter("search");
-        req.setAttribute("customer",customerservice.findByName(name));
+        if(name == null || name.equals("")){
+            req.setAttribute("customer", customerService.findAll());
+        } else{
+            req.setAttribute("customer",customerService.findByName(name));
+        }
+        
         RequestDispatcher rd = req.getRequestDispatcher("view/customer.jsp");
         rd.forward(req, resp);
     }

@@ -16,17 +16,18 @@ public class Address {
     private String town;
     private String district;
     private String city;
-
+    private Person person;
     public Address() {
     }
 
-    public Address(int id, int number, String street, String town, String district, String city) {
+    public Address(int id, int number, String street, String town, String district, String city, Person person) {
         this.id = id;
         this.number = number;
         this.street = street;
         this.town = town;
         this.district = district;
         this.city = city;
+        this.person = person;
     }
 
     public int getId() {
@@ -76,6 +77,16 @@ public class Address {
     public void setCity(String city) {
         this.city = city;
     }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+    
+    @Override
     public String toString(){
         return "so:" +number+", ngo:"+street+"";
     }

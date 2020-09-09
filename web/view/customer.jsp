@@ -243,9 +243,9 @@
                 <div class="input-group" style="margin-top: 100px">
                     <input type="text" name="search" class="form-control" placeholder="Search...">
                                     <span class="input-group-btn" >
-                                        <button class="btn btn-primary" type="submit">
+                                        <a href=""><button class="btn btn-primary" type="submit">
                                            <i class="fa fa-search"></i>
-                                        </button>
+                                            </button></a>
                                 </span>
                                 </div>
                 <div style="margin-left: 30%">
@@ -281,13 +281,13 @@
                     <tbody>
                         <c:forEach items="${customer}" var="item">
                         <tr>
-                            <td>${item.id}</td>
-                            <td>${item.getName()}</td>
-                            <td>${item.points}</td>
-                            <td>${item.age}</td>
-                            <td>${item.gender}</td>
-                            <td>null</td>
-                            <td>null</td>
+                            <td>${item.getId()}</td>
+                            <td>${item.getPerson().getName()}</td>
+                            <td>${item.getPoints()}</td>
+                            <td>${item.getPerson().getAge()}</td>
+                            <td>${item.getPerson().getGender()}</td>
+                            <td>${item.getPerson().getAdrress().toString()}</td>
+                            <td>${item.getPerson().getContact().getPhone()}</td>
                         </tr>
                         </c:forEach>
                        
