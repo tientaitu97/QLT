@@ -13,16 +13,18 @@ public class Bill {
     private int id; 
     private String createDate;
     private String endDate;
+    private int number;
     private Customer customer;
     private Book book;
 
     public Bill() {
     }
 
-    public Bill(int id, String createDate, String endDate, Customer customer, Book book) {
+    public Bill(int id, String createDate, String endDate, int number, Customer customer, Book book) {
         this.id = id;
         this.createDate = createDate;
         this.endDate = endDate;
+        this.number = number;
         this.customer = customer;
         this.book = book;
     }
@@ -49,6 +51,14 @@ public class Bill {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public Customer getCustomer() {

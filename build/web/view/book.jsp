@@ -292,7 +292,7 @@
                             <td>${item.getPublisher().getName()}</td>
                             <td>${item.getSupplier().getName()}</td>
                             <td>${item.getPrice().getPurchasePrice()}</td>
-                            <td><a href="<c:url value='/book?select=${item.getId()}'/> ">
+                            <td><a href="<c:url value='/bill?select=${item.getId()}&name=${nameCustomer}'/> ">
                                     <button style="background: aqua; color: black;"type="button">Select</button></a></td>
                         </tr>
                         </c:forEach>

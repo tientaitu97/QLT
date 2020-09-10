@@ -26,6 +26,8 @@ public class BookController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("search");
+        String nameCustomer = req.getParameter("select");
+        req.setAttribute("nameCustomer", nameCustomer);
         if(name == null || name.equals("")){
             req.setAttribute("book", bookService.findAll());
         } else{

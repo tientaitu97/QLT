@@ -252,6 +252,8 @@
                     <h1> DANH SACH KHACH HANG</h1>
                 </div>
                 <div style="margin-top: 100px">
+                    <div><a href="<c:url value='/create?select=swl'/>"><button type="buton"> Create New</button></a></div>
+                    <br/>
                 <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                     <thead>
                         <tr>

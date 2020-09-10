@@ -6,14 +6,13 @@
 package dao;
 
 import java.util.List;
-import model.Customer;
+import model.Bill;
 
 /**
  *
- * @author admin
+ * @author TienTaiTu
  */
-public interface ICustomerDAO {
-    List<Customer> findAll();
-    List<Customer> findByName(String name);
-    Customer create(String id, String points, String person_id);
+public interface IBillDAO {
+    List<Bill> findAll();
+    Bill CreateBill(String id, String name);
 }

@@ -17,23 +17,18 @@ import service.impl.CustomerService;
 
 /**
  *
- * @author admin
+ * @author TienTaiTu
  */
-@WebServlet("/customer")
-public class CustomerController extends HttpServlet{
-    private ICustomerService customerService = new CustomerService();
+@WebServlet("/create")
+public class CreateCustomerController extends HttpServlet{
+     private ICustomerService customerService = new CustomerService();
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
-            String name = req.getParameter("search");
-        if(name == null || name.equals("")){
-            req.setAttribute("customer", customerService.findAll());
-        } else{
-            req.setAttribute("customer",customerService.findByName(name));
-        }
+            
         
-        RequestDispatcher rd = req.getRequestDispatcher("view/customer.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("view/createCustomer.jsp");
         rd.forward(req, resp);
                 
         } catch(Exception e){
@@ -46,5 +41,4 @@ public class CustomerController extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       
     }
-    
 }

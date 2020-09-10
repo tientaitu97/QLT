@@ -104,5 +104,35 @@ public class CustomerDAO implements ICustomerDAO{
       }
         return null;
     }
+
+    @Override
+    public Customer create(String id, String points, String person_id ) {
+        Customer customer = new Customer();
+         String sql = "INSERT INTO book.customer (id, points, persion_id)\n" +
+                        "VALUES (?, ?, ?)";
+       Connection connection = ConnectToDatabase.getConnect();
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+        if(connection != null){
+            try{
+             statement = connection.prepareStatement(sql);
+             statement.setString(1, id);
+             statement.setString(2, points);
+             statement.setString(3, person_id);
+             rs = statement.executeQuery();
+            while (rs.next()){
+              
+                
+            }
+            return customer;
+        } catch (Exception e){
+            e.printStackTrace();
+      
+        }
+         
+      }
+        
+        return null;
+    }
     
 }

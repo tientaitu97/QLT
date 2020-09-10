@@ -26,23 +26,20 @@
 
         <!-- Morris Charts CSS -->
         <link href="<c:url value='/view/css/morris.css'/>" rel="stylesheet">
-         <!-- jQuery -->
-        <script src="<c:url value='/view/js/jquery.min.js'/>"></script>
-        <script src="<c:url value='/view/js/jquery.twbsPagination.min.js'/>"></script>
-        <script src="<c:url value='/view/js/jquery.twbsPagination.js'/>"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="<c:url value='/view/js/bootstrap.min.js'/>"></script>
-      
-
 
         <!-- Custom Fonts -->
         <link href="<c:url value='/view/css/font-awesome.min.css'/>" rel="stylesheet" type="text/css">
 
-       
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--        [if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
 
-        <div id="wrapper container">
+        <div id="wrapper">
 
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -238,83 +235,16 @@
                     </div>
                 </div>
             </nav>
-            <div style="margin-left: 300px">
-                <form action='<c:url value="/customer?action=customer"/>' method="GET">
-                <div class="input-group" style="margin-top: 100px">
-                    <input type="text" name="search" class="form-control" placeholder="Search...">
-                                    <span class="input-group-btn" >
-                                        <a href=""><button class="btn btn-primary" type="submit">
-                                           <i class="fa fa-search"></i>
-                                            </button></a>
-                                </span>
-                                </div>
-                <div style="margin-left: 30%">
-                    <h1> DANH SACH KHACH HANG</h1>
-                </div>
-                <div style="margin-top: 100px">
-                    <div><a href="<c:url value='/create?select=swl'/>"><button type="buton"> Create New</button></a></div>
-                    <br/>
-                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th class="th-sm">ID
-
-                            </th>
-                            <th class="th-sm">Name
-
-                            </th>
-                            <th class="th-sm">points
-
-                            </th>
-                            <th class="th-sm">Age
-
-                            </th>
-                            <th class="th-sm">Gender
-
-                            </th>
-                            <th class="th-sm">Address
-
-                            </th>
-                            <th class="th-sm">Contact
-
-                            </th>
-                            <th class="th-sm">Select Customer
-
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${customer}" var="item">
-                        <tr>
-                            <td>${item.getId()}</td>
-                            <td>${item.getPerson().getName()}</td>
-                            <td>${item.getPoints()}</td>
-                            <td>${item.getPerson().getAge()}</td>
-                            <td>${item.getPerson().getGender()}</td>
-                            <td>${item.getPerson().getAdrress().toString()}</td>
-                            <td>${item.getPerson().getContact().getPhone()}</td>
-                            <td><a href="<c:url value='/book?select=${item.getPerson().getName()}'/> ">
-                                    <button style="background: aqua; color: black;"type="button">Select</button></a></td>
-                        </tr>
-                        </c:forEach>
-                       
-                    </tbody>
-                    
-                </table>
-    <nav aria-label="Page navigation">
-        <ul class="pagination" id="pagination">
-            
-        </ul>
-        
-    </nav>
-                </div>
-               
-            </form>
-            </div>
+           
         </div>
         <!-- /#wrapper -->
 
-       
+        <!-- jQuery -->
+        <script src="<c:url value='/view/js/jquery.min.js'/>"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="<c:url value='/view/js/bootstrap.min.js'/>"></script>
+
         <!-- Metis Menu Plugin JavaScript -->
         <script src="<c:url value='/view/js/metisMenu.min.js'/>"></script>
 
@@ -325,18 +255,7 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="<c:url value='/view/js/startmin.js'/>"></script>
-        <script>
-            $(function () {
-                window.pagObj = $('#pagination').twbsPagination({
-                    totalPages: 35,
-                    visiblePages: 10,
-                    onPageClick: function (event, page) {
-                        console.info(page + ' (from options)');
-                    }
-                }).on('page', function (event, page) {
-                    console.info(page + ' (from event listening)');
-                });
-            });
-                </script>
+
     </body>
 </html>
+
