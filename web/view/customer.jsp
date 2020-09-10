@@ -276,6 +276,9 @@
                             <th class="th-sm">Contact
 
                             </th>
+                            <th class="th-sm">Select Customer
+
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -288,6 +291,8 @@
                             <td>${item.getPerson().getGender()}</td>
                             <td>${item.getPerson().getAdrress().toString()}</td>
                             <td>${item.getPerson().getContact().getPhone()}</td>
+                            <td><a href="<c:url value='/book?select=${item.getPerson().getName()}'/> ">
+                                    <button style="background: aqua; color: black;"type="button">Select</button></a></td>
                         </tr>
                         </c:forEach>
                        
@@ -298,6 +303,7 @@
         <ul class="pagination" id="pagination">
             
         </ul>
+        
     </nav>
                 </div>
                

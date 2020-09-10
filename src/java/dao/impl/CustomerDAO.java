@@ -27,8 +27,8 @@ public class CustomerDAO implements ICustomerDAO{
     public List<Customer> findAll() {
         List<Customer> results = new ArrayList<>();
          try{
-            ResultSet rs = new ConnectToDatabase().selectData("select * from quanlytruyen.customer as c, quanlytruyen.address a, "
-               + "quanlytruyen.contact as ct, quanlytruyen.person as p "
+            ResultSet rs = new ConnectToDatabase().selectData("select * from quanlitruyen.customer as c, quanlitruyen.address as a, "
+               + "quanlitruyen.contact as ct, quanlitruyen.person as p "
                + "where p.address_id = a.id and p.contact_id = ct.id and p.id = c.person_id");
             while (rs.next()){
                 Customer customer = new Customer();
@@ -62,8 +62,8 @@ public class CustomerDAO implements ICustomerDAO{
     @Override
     public List<Customer> findByName(String name) {
        List<Customer> results = new ArrayList<>();
-       String sql = "select * from quanlytruyen.customer as c, quanlytruyen.address a, "
-               + "quanlytruyen.contact as ct, quanlytruyen.person as p "
+       String sql = "select * from quanlitruyen.customer as c, quanlitruyen.address as a, "
+               + "quanlitruyen.contact as ct, quanlitruyen.person as p "
                + "where p.address_id = a.id and p.contact_id = ct.id and p.id = c.person_id and p.name = ?";
        Connection connection = ConnectToDatabase.getConnect();
         PreparedStatement statement = null;

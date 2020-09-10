@@ -9,26 +9,22 @@ package model;
  *
  * @author admin
  */
-public class BillBorrow {
-    private int id;
-    private String nameCustommer;
-    private String nameBook;
+public class Bill {
+    private int id; 
     private String createDate;
     private String endDate;
     private Customer customer;
-    private Borrow borrow;
+    private Book book;
 
-    public BillBorrow() {
+    public Bill() {
     }
 
-    public BillBorrow(int id, String nameCustommer, String nameBook, String createDate, String endDate, Customer customer, Borrow borrow) {
+    public Bill(int id, String createDate, String endDate, Customer customer, Book book) {
         this.id = id;
-        this.nameCustommer = nameCustommer;
-        this.nameBook = nameBook;
         this.createDate = createDate;
         this.endDate = endDate;
         this.customer = customer;
-        this.borrow = borrow;
+        this.book = book;
     }
 
     public int getId() {
@@ -37,22 +33,6 @@ public class BillBorrow {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNameCustommer() {
-        return nameCustommer;
-    }
-
-    public void setNameCustommer(String nameCustommer) {
-        this.nameCustommer = nameCustommer;
-    }
-
-    public String getNameBook() {
-        return nameBook;
-    }
-
-    public void setNameBook(String nameBook) {
-        this.nameBook = nameBook;
     }
 
     public String getCreateDate() {
@@ -79,12 +59,13 @@ public class BillBorrow {
         this.customer = customer;
     }
 
-    public Borrow getBorrow() {
-        return borrow;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBorrow(Borrow borrow) {
-        this.borrow = borrow;
+    public void setBook(Book book) {
+        this.book = book;
     }
+
     
 }

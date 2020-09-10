@@ -11,24 +11,24 @@ package model;
  */
 public class Book {
     private int id;
-    private String publisher;
-    private String supplier;
-    private String publishYear;
     private String name;
+    private String publishYear;
     private Price price;
     private Type type;
+    private Supplier supplier;
+    private Publisher publisher;
 
     public Book() {
     }
 
-    public Book(int id, String publisher, String supplier, String publishYear, String name, Price price, Type type) {
+    public Book(int id, String name, String publishYear, Price price, Type type, Supplier supplier, Publisher publisher) {
         this.id = id;
-        this.publisher = publisher;
-        this.supplier = supplier;
-        this.publishYear = publishYear;
         this.name = name;
+        this.publishYear = publishYear;
         this.price = price;
         this.type = type;
+        this.supplier = supplier;
+        this.publisher = publisher;
     }
 
     public int getId() {
@@ -39,20 +39,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getPublisher() {
-        return publisher;
+    public String getName() {
+        return name;
     }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public String getSupplier() {
-        return supplier;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPublishYear() {
@@ -61,14 +53,6 @@ public class Book {
 
     public void setPublishYear(String publishYear) {
         this.publishYear = publishYear;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Price getPrice() {
@@ -87,5 +71,20 @@ public class Book {
         this.type = type;
     }
 
-   
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+    
 }

@@ -20,13 +20,13 @@ import service.impl.CustomerService;
  * @author admin
  */
 @WebServlet("/customer")
-public class HomeController extends HttpServlet{
+public class CustomerController extends HttpServlet{
     private ICustomerService customerService = new CustomerService();
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
-        String name = req.getParameter("search");
+        try{
+            String name = req.getParameter("search");
         if(name == null || name.equals("")){
             req.setAttribute("customer", customerService.findAll());
         } else{
@@ -35,6 +35,10 @@ public class HomeController extends HttpServlet{
         
         RequestDispatcher rd = req.getRequestDispatcher("view/customer.jsp");
         rd.forward(req, resp);
+        } catch(Exception e){
+            throw e;
+        }
+        
     }
 
     @Override

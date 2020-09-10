@@ -11,14 +11,14 @@ package model;
  */
 public class Price {
     private int id;
-    private float purchasePrice;
-    private float salePrice;
+    private String purchasePrice;
+    private String salePrice;
     private String discount;
 
     public Price() {
     }
 
-    public Price(int id, float purchasePrice, float salePrice, String discount) {
+    public Price(int id, String purchasePrice, String salePrice, String discount) {
         this.id = id;
         this.purchasePrice = purchasePrice;
         this.salePrice = salePrice;
@@ -33,19 +33,19 @@ public class Price {
         this.id = id;
     }
 
-    public float getPurchasePrice() {
+    public String getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(float purchasePrice) {
+    public void setPurchasePrice(String purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
-    public float getSalePrice() {
+    public String getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(float salePrice) {
+    public void setSalePrice(String salePrice) {
         this.salePrice = salePrice;
     }
 
@@ -56,5 +56,6 @@ public class Price {
     public void setDiscount(String discount) {
         this.discount = discount;
     }
+
     
 }
