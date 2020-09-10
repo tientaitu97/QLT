@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author admin
@@ -13,10 +15,11 @@ public class Customer{
     private int id;
     private int points;
     private Person person;
-
+   
     public Customer() {
     }
 
+   
     public Customer(int id, int points, Person person) {
         this.id = id;
         this.points = points;

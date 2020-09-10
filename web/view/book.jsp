@@ -264,13 +264,19 @@
                             <th class="th-sm"> Tác giả
 
                             </th>
+                             <th class="th-sm"> The loai
+
+                            </th>
                             <th class="th-sm">Nhà xuất bản
 
                             </th>
-                            <th class="th-sm">Năm xuất bản
+                            <th class="th-sm">Nhà cung cấp
 
                             </th>
                             <th class="th-sm"> Giá thuê
+
+                            </th>
+                            <th class="th-sm"> Select Book
 
                             </th>
                         </tr>
@@ -281,6 +287,7 @@
                             <td>${item.getId()}</td>
                             <td>${item.getName()}</td>
                             <td>${item.getPublishYear()}</td>
+                            <td>${item.getAuthor()}</td>
                             <td>${item.getType().getName()}</td>                        
                             <td>${item.getPublisher().getName()}</td>
                             <td>${item.getSupplier().getName()}</td>

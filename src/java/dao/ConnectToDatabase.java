@@ -25,7 +25,7 @@ public class ConnectToDatabase {
 
 // Buoc 2: Tao doi tuong Connection  
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/quanlitruyen?characterEncoding=utf8", "root", "12345");
+                    "jdbc:mysql://localhost:8080/book?characterEncoding=utf8", "root", "12345");
             System.out.println("Connect success");
         } catch (Exception e) {
             System.out.println("Error When you connect to database is: " + e.getMessage());
