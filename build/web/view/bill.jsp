@@ -240,6 +240,11 @@
                     </tbody>
                     
                 </table>
+                    <div style="margin-left: 80%; margin-top: 250px">
+                        <button> Lưu</button>
+                        <button> Hiển thị</button>
+                        <button> In</button>
+                    </div>
                 </div>
             </form>
             </div>

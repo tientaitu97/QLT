@@ -245,10 +245,14 @@
         <!-- Custom Theme JavaScript -->
         <script src="<c:url value='/view/js/startmin.js'/>"></script>
         <script>
-            $(document).ready(function() {
-               $(#save).onclick(function(){
+            function loadTeews(){
+                onclick(function(){
                    alert("Lưu thành công");
+                }
+            $(document).ready(function() {
+                $('#save').on('click', loadTweets);
                });
+              
         });
         </script>
 
