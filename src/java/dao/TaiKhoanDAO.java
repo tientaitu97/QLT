@@ -5,6 +5,7 @@
  */
 package dao;
 
+import dao.impl.ConnectToDatabase;
 import model.Account;
 import java.math.BigDecimal;
 import java.sql.ResultSet;

@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package service;
+package dao;
 
-import java.util.List;
-import model.Customer;
+import model.Account;
 
 /**
  *
  * @author admin
  */
-public interface ICustomerService {
-    List<Customer> findAll();
-    List<Customer> findByName(String name);
+public interface IAccountDAO {
+    boolean login(Account account);
 }

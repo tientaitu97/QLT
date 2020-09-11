@@ -5,7 +5,6 @@
  */
 package dao.impl;
 
-import dao.ConnectToDatabase;
 import dao.IBillDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

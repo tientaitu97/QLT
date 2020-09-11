@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dao.impl.CustomerDAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,8 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import service.ICustomerService;
-import service.impl.CustomerService;
+
 
 /**
  *
@@ -21,16 +21,16 @@ import service.impl.CustomerService;
  */
 @WebServlet("/customer")
 public class CustomerController extends HttpServlet{
-    private ICustomerService customerService = new CustomerService();
+    private CustomerDAO customerDAO = new CustomerDAO();
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
             String name = req.getParameter("search");
         if(name == null || name.equals("")){
-            req.setAttribute("customer", customerService.findAll());
+            req.setAttribute("customer", customerDAO.findAll());
         } else{
-            req.setAttribute("customer",customerService.findByName(name));
+            req.setAttribute("customer",customerDAO.findByName(name));
         }
         
         RequestDispatcher rd = req.getRequestDispatcher("view/customer.jsp");

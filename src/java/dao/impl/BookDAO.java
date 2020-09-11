@@ -5,7 +5,6 @@
  */
 package dao.impl;
 
-import dao.ConnectToDatabase;
 
 import dao.IBookDAO;
 import java.sql.Connection;
@@ -71,14 +70,14 @@ public class BookDAO implements IBookDAO{
 "FROM quanlitruyen.book as b, quanlitruyen.type as t, \n" +
 "quanlitruyen.supplier as s, quanlitruyen.publisher as pb,\n" +
 " quanlitruyen.price as pr where b.price_id = pr.id\n" +
-" and b.type_id = t.id and b.supplier_id = s.id and b.publisher_id = pb.id and b.name = ?";
+" and b.type_id = t.id and b.supplier_id = s.id and b.publisher_id = pb.id and b.name like ?";
         Connection connection = ConnectToDatabase.getConnect();
         PreparedStatement statement = null;
         ResultSet rs = null;
         if(connection != null){
             try{
              statement = connection.prepareStatement(sql);
-             statement.setString(1, name);
+             statement.setString(1,"%"+ name+ "%");
              rs = statement.executeQuery();
               while (rs.next()){
                 Book book = new Book();

@@ -143,99 +143,91 @@
                                 </span>
                                 </div>-->
                                 <!-- /input-group -->
+                             <li>
+                                <a href="<c:url value='/customer'/>"><i class="fa fa-bar-chart-o fa-fw"></i> Tạo Phiếu Mượn<span class="fa arrow"></span></a>
+                                
                             </li>
                             <li>
-                                <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="#"><i class="fa fa-table fa-fw"></i> Thống kê truyện mượn nhiều</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="flot.html">Flot Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="morris.html">Morris.js Charts</a>
-                                    </li>
-                                </ul>
+                                <a href="#"><i class="fa fa-edit fa-fw"></i> Thống kê khách hàng mượn nhiều</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-wrench fa-fw"></i> Tạo Hóa Đơn trả truyện<span class="fa arrow"></span></a>
+                                
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Thống kê doanh thu<span class="fa arrow"></span></a>
                             </li>
                             <li>
-                                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="panels-wells.html">Panels and Wells</a>
-                                    </li>
-                                    <li>
-                                        <a href="buttons.html">Buttons</a>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html">Notifications</a>
-                                    </li>
-                                    <li>
-                                        <a href="typography.html">Typography</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons.html"> Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="grid.html">Grid</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                                        <ul class="nav nav-third-level">
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                        </ul>
-                                        <!-- /.nav-third-level -->
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="blank.html">Blank Page</a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html">Login Page</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
+                                <a href="#"><i class="fa fa-files-o fa-fw"></i> Thống kê nhà cung cấp theo doanh chi<span class="fa arrow"></span></a>
+                                
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-           
+                                <div style="margin-left: 300px">
+                                <div style="margin-top: 100px; margin-left: 30%">
+                                    <h1> TẠO MỚI KHÁCH HÀNG</h1>
+                                </div>
+                                    <div style="margin-top: 50px">
+                                       <form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Mã khách hàng</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập mã ...">
+    </div>
+  </div>
+                                           <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Tên khách hàng</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập tên ...">
+    </div>
+  </div>
+                                           <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Điểm</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập điểm ...">
+    </div>
+  </div>
+                                           <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Tuổi</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập tuổi ...">
+    </div>
+  </div>
+                                           <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Giới tính</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập giới tính ...">
+    </div>
+  </div>
+                                           <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Địa chỉ</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập địa chỉ ...">
+    </div>
+  </div>
+                                            <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Liên lạc</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập email hoặc số điện thoại ...">
+    </div>
+  </div>
+                                    
+  
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Lưu</button>
+      <a href="<c:url value='/customer'/>"><button style="background: red"type="button" class="btn btn-primary">Quay lại</button></a>
+    </div>
+  </div>
+</form>
+                                    </div>
+           </div>
+                                </div>
         </div>
         <!-- /#wrapper -->
 

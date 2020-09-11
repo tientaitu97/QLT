@@ -5,7 +5,6 @@
  */
 package dao.impl;
 
-import dao.ConnectToDatabase;
 import dao.ICustomerDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -64,14 +63,14 @@ public class CustomerDAO implements ICustomerDAO{
        List<Customer> results = new ArrayList<>();
        String sql = "select * from quanlitruyen.customer as c, quanlitruyen.address as a, "
                + "quanlitruyen.contact as ct, quanlitruyen.person as p "
-               + "where p.address_id = a.id and p.contact_id = ct.id and p.id = c.person_id and p.name = ?";
+               + "where p.address_id = a.id and p.contact_id = ct.id and p.id = c.person_id and p.name like ?";
        Connection connection = ConnectToDatabase.getConnect();
         PreparedStatement statement = null;
         ResultSet rs = null;
         if(connection != null){
             try{
              statement = connection.prepareStatement(sql);
-             statement.setString(1, name);
+             statement.setString(1, "%" +name+ "%");
              rs = statement.executeQuery();
             while (rs.next()){
                 Customer customer = new Customer();

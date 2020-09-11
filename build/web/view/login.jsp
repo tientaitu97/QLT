@@ -40,10 +40,10 @@
                             <h3 class="panel-title">Mời bạn đăng nhập</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="<c:url value='/dang-nhap'/>" method="POST" id="formLogin">
+                            <form action="<%=request.getContextPath()%>/login" method="post" id="formLogin">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Nhập tài khoản..." name="username" type="email" autofocus>
+                                        <input class="form-control" placeholder="Nhập tài khoản..." name="username" autofocus>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" placeholder="Nhập mật khẩu ..." name="password" type="password" value="">
@@ -57,7 +57,12 @@
                 </div>
             </div>
         </div>
-
+            <%
+		String err = request.getParameter("err");
+		if ("1".equals(err)) {
+			out.print("<h4 style=\"color: red; text-align:center\">Đăng nhập thất bại</h4>");
+		}
+            %>
         <!-- jQuery -->
         <script src="<c:url value='/view/js/jquery.min.js'/>"></script>
 
