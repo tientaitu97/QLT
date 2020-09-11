@@ -15,5 +15,5 @@ import model.Customer;
 public interface ICustomerDAO {
     List<Customer> findAll();
     List<Customer> findByName(String name);
-    Customer create(String id, String points, String person_id);
+    void create(String name, String points, String age, String gender, String address, String contact);
 }

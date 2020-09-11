@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dao.impl.CustomerDAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,9 +19,22 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/create")
 public class CreateCustomerController extends HttpServlet{
+    CustomerDAO customerDao = new CustomerDAO();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       
+        try{
+        String nameCustomer = req.getParameter("nameCustomer");
+        String points = req.getParameter("points");
+        String age = req.getParameter("age");
+        String gender = req.getParameter("gender");
+        String address = req.getParameter("address");
+        String contact = req.getParameter("contact");
+        
+        
+            customerDao.create(nameCustomer, points, age, gender, address, contact);
+        }catch(Exception e){
+            throw e;
+        }
         
         RequestDispatcher rd = req.getRequestDispatcher("view/createCustomer.jsp");
         rd.forward(req, resp);

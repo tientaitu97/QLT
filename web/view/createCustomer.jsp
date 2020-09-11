@@ -174,57 +174,53 @@
                                     <h1> TẠO MỚI KHÁCH HÀNG</h1>
                                 </div>
                                     <div style="margin-top: 50px">
-                                       <form>
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Mã khách hàng</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập mã ...">
-    </div>
-  </div>
+                                        <form action="<%=request.getContextPath()%>/create" method="GET">
+ 
                                            <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Tên khách hàng</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập tên ...">
+      <input type="text" name="nameCustomer" class="form-control" id="inputEmail3" placeholder="Nhập tên ...">
     </div>
   </div>
                                            <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Điểm</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập điểm ...">
+      <input type="text" name="points" class="form-control" id="inputEmail3" placeholder="Nhập điểm ...">
     </div>
   </div>
                                            <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Tuổi</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập tuổi ...">
+      <input type="text" name="age" class="form-control" id="inputEmail3" placeholder="Nhập tuổi ...">
     </div>
   </div>
                                            <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Giới tính</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập giới tính ...">
+      <input type="text" name="gender" class="form-control" id="inputEmail3" placeholder="Nhập giới tính ...">
     </div>
   </div>
                                            <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Địa chỉ</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập địa chỉ ...">
+      <input type="text" name="address" class="form-control" id="inputEmail3" placeholder="Nhập địa chỉ ...">
     </div>
   </div>
                                             <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Liên lạc</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Nhập email hoặc số điện thoại ...">
+      <input type="text" name="contact" class="form-control" id="inputEmail3" placeholder="Nhập số điện thoại ...">
     </div>
   </div>
                                     
   
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Lưu</button>
+      <button id="save" type="submit" class="btn btn-primary">Lưu</button>
       <a href="<c:url value='/customer'/>"><button style="background: red"type="button" class="btn btn-primary">Quay lại</button></a>
     </div>
+    </form>
   </div>
-</form>
+
                                     </div>
            </div>
                                 </div>
@@ -233,6 +229,7 @@
 
         <!-- jQuery -->
         <script src="<c:url value='/view/js/jquery.min.js'/>"></script>
+        
 
         <!-- Bootstrap Core JavaScript -->
         <script src="<c:url value='/view/js/bootstrap.min.js'/>"></script>
@@ -247,6 +244,13 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="<c:url value='/view/js/startmin.js'/>"></script>
+        <script>
+            $(document).ready(function() {
+               $(#save).onclick(function(){
+                   alert("Lưu thành công");
+               });
+        });
+        </script>
 
     </body>
 </html>

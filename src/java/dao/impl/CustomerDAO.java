@@ -105,25 +105,31 @@ public class CustomerDAO implements ICustomerDAO{
     }
 
     @Override
-    public Customer create(String id, String points, String person_id ) {
-        Customer customer = new Customer();
-         String sql = "INSERT INTO book.customer (id, points, persion_id)\n" +
-                        "VALUES (?, ?, ?)";
+    public void create(String name, String points, String age, String gender, String address, String contact ) {
+        
+         String sql = "insert into quanlitruyen.address(city) value (?);\n" +
+"set @address_id = last_insert_id();\n" +
+"insert into quanlitruyen.contact(phone) value (?);\n" +
+"set @contact_id = last_insert_id();\n" +
+"insert into quanlitruyen.person(name, age, gender, address_id, contact_id) value (?, ?, ?, @address_id, @contact_id);\n" +
+"set @person_id = last_insert_id();\n" +
+"insert into quanlitruyen.customer(points, person_id) value (?, @person_id);"; 
+
        Connection connection = ConnectToDatabase.getConnect();
         PreparedStatement statement = null;
-        ResultSet rs = null;
         if(connection != null){
             try{
              statement = connection.prepareStatement(sql);
-             statement.setString(1, id);
-             statement.setString(2, points);
-             statement.setString(3, person_id);
-             rs = statement.executeQuery();
-            while (rs.next()){
-              
-                
-            }
-            return customer;
+             statement.setString(1, address);
+             statement.setString(2, contact);
+             statement.setString(3, name);
+             statement.setString(4, age);
+             statement.setString(5, gender);
+             statement.setString(6, points);
+             
+             statement.executeUpdate(sql);
+           
+           
         } catch (Exception e){
             e.printStackTrace();
       
@@ -131,7 +137,7 @@ public class CustomerDAO implements ICustomerDAO{
          
       }
         
-        return null;
+       
     }
     
 }
