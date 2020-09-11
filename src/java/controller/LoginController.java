@@ -41,7 +41,10 @@ public class LoginController extends HttpServlet {
         String password = req.getParameter("password");
         Account account = new Account(username, password);
         if (new AccountDAO().login(account)) {
-            resp.sendRedirect("customer");
+        req.setAttribute("username", username);
+//         resp.sendRedirect("home");
+        RequestDispatcher rd = req.getRequestDispatcher("view/home.jsp");
+        rd.forward(req, resp);
         } else {
             resp.sendRedirect("login?err=1");
         }
