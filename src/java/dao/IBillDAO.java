@@ -13,6 +13,5 @@ import model.Bill;
  * @author TienTaiTu
  */
 public interface IBillDAO {
-    List<Bill> findAll();
-    Bill CreateBill(String id, String name);
+    int CreateBill(String createDate, String endDate, String customerId, String bookId);
 }

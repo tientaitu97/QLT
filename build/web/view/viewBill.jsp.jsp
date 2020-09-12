@@ -143,7 +143,7 @@
                                 </span>
                                 </div>-->
                                 <!-- /input-group -->
-                            <li>
+                             <li>
                                 <a href="<c:url value='/customer'/>"><i class="fa fa-bar-chart-o fa-fw"></i> Tạo Phiếu Mượn<span class="fa arrow"></span></a>
                                 
                             </li>
@@ -170,19 +170,30 @@
                 </div>
             </nav>
             <div style="margin-left: 300px">
-            <form action='<c:url value="/book?action=book"/>' method="GET">
-                <div class="input-group" style="margin-top: 100px">
+<!--                <div class="input-group" style="margin-top: 100px">
                                     <input type="text" name="search" class="form-control" placeholder="Search...">
                                     <span class="input-group-btn" >
                                         <button class="btn btn-primary" type="submit">
                                             <i class="fa fa-search"></i>
                                         </button>
                                 </span>
-                                </div>
-                <div style="margin-left: 30%">
-                    <h1> DANH SACH TRUYEN</h1>
+                                </div>-->
+                <div style="margin-left: 30%; margin-top: 100px">
+                    <h1> TẠO PHIẾU MƯỢN</h1>
                 </div>
-                <div style="margin-top: 100px">
+<form action="<%=request.getContextPath()%>/createBill" method="GET">
+                <p>Tên khách hàng: ${nameCustomer}</p>
+                    <p>Ngày mượn: <input name="create_date"></p>
+                    <p>Ngày trả: <input name="end_date"></p>
+                     <input type="hidden" name="idBook" value=${book.getId()}>
+                     <input type="hidden"  name="idCustomer" value=${idCustomer}>
+                 <div class="col-sm-10">
+                <button id="save" type="submit" class="btn btn-primary">Lưu</button>
+              </div>
+                
+</form>
+                    
+                   <div style="margin-top: 20px">
                 <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -210,33 +221,28 @@
                             <th class="th-sm"> Giá thuê
 
                             </th>
-                            <th class="th-sm"> Chọn
-
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                         <c:forEach items="${book}" var="item">
-                        <tr>
-                            <td>${item.getId()}</td>
-                            <td>${item.getName()}</td>
-                            <td>${item.getPublishYear()}</td>
-                            <td>${item.getAuthor()}</td>
-                            <td>${item.getType().getName()}</td>                        
-                            <td>${item.getPublisher().getName()}</td>
-                            <td>${item.getSupplier().getName()}</td>
-                            <td>${item.getPrice().getPurchasePrice()}</td>
-                            <td><a href="<c:url value='/bill?idBook=${item.getId()}&idCustomer=${idCustomer}'/> ">
-                                    <button style="background: aqua; color: black;"type="button">Select</button></a></td>
-                        </tr>
-                        </c:forEach>
-                       
-                       
+                         <tr>
+                            <td>${book.getId()}</td>
+                            <td>${book.getName()}</td>
+                            <td>${book.getPublishYear()}</td>
+                            <td>${book.getAuthor()}</td>
+                            <td>${book.getType().getName()}</td>                        
+                            <td>${book.getPublisher().getName()}</td>
+                            <td>${book.getSupplier().getName()}</td>
+                            <td>${book.getPrice().getPurchasePrice()}</td>
+                        </tr>   
                     </tbody>
                     
                 </table>
+                    <div style="margin-left: 80%; margin-top: 250px">
+                        
+                        <button> Hiển thị</button>
+                        <button> In</button>
+                    </div>
                 </div>
-            </form>
             </div>
         </div>
         <!-- /#wrapper -->
@@ -260,4 +266,6 @@
 
     </body>
 </html>
+
+
 

@@ -174,7 +174,7 @@
                                     <h1> TẠO MỚI KHÁCH HÀNG</h1>
                                 </div>
                                     <div style="margin-top: 50px">
-                                        <form action="<%=request.getContextPath()%>/create" method="GET">
+                                        <form action="<%=request.getContextPath()%>/create" method="POST">
  
                                            <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Tên khách hàng</label>
@@ -215,7 +215,7 @@
                                     
   
     <div class="col-sm-10">
-      <button id="save" type="submit" class="btn btn-primary">Lưu</button>
+      <button id="save" onclick="saveSuccess()" type="submit" class="btn btn-primary">Lưu</button>
       <a href="<c:url value='/customer'/>"><button style="background: red"type="button" class="btn btn-primary">Quay lại</button></a>
     </div>
     </form>
@@ -245,15 +245,9 @@
         <!-- Custom Theme JavaScript -->
         <script src="<c:url value='/view/js/startmin.js'/>"></script>
         <script>
-            function loadTeews(){
-                onclick(function(){
-                   alert("Lưu thành công");
-                }
-            $(document).ready(function() {
-                $('#save').on('click', loadTweets);
-               });
-              
-        });
+            function saveSuccess(){
+                   alert("Lưu thông tin thành công");
+                };
         </script>
 
     </body>

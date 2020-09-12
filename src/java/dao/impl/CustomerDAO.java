@@ -6,10 +6,12 @@
 package dao.impl;
 
 import dao.ICustomerDAO;
+import static dao.impl.ConnectToDatabase.getConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -229,14 +231,51 @@ public class CustomerDAO implements ICustomerDAO {
     @Override
     public int getAutoId(String table) {
         try {
-            String sqlGetAutoId = "SELECT (MAX(ID)+1) AS AUTO_ID FROM "+table;
+            String sqlGetAutoId = "SELECT (MAX(ID)+1) AS AUTO_ID FROM " + table;
             ResultSet rs = ConnectToDatabase.selectData(sqlGetAutoId);
-            if(rs.next()){
+            if (rs.next()) {
                 return rs.getInt("AUTO_ID");
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         return 0;
+    }
+
+    @Override
+    public Customer getCustomerById(String id) {
+        Customer customer = new Customer();
+        Connection connect = getConnect();
+        try {
+            String sql = "select * from quanlitruyen.customer as c, quanlitruyen.address as a, "
+                    + "quanlitruyen.contact as ct, quanlitruyen.person as p "
+                    + "where p.address_id = a.id and p.contact_id = ct.id and p.id = c.person_id and c.id = ? ";
+            PreparedStatement stmt = connect.prepareStatement(sql);
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Address address = new Address();
+                Person person = new Person();
+                Contact contact = new Contact();
+                customer.setId(rs.getInt("id"));
+                customer.setPoints(rs.getInt("points"));
+                person.setAge(rs.getInt("age"));
+                person.setGender(rs.getString("gender"));
+                person.setName(rs.getString("name"));
+                address.setNumber(rs.getInt("number"));
+                address.setStreet(rs.getString("street"));
+                address.setTown(rs.getString("town"));
+                address.setDistrict(rs.getString("district"));
+                address.setCity(rs.getString("city"));
+                contact.setPhone(rs.getString("phone"));
+                person.setAdrress(address);
+                person.setContact(contact);
+                customer.setPerson(person);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return customer;
     }
 }

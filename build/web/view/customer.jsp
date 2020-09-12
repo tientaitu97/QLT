@@ -228,7 +228,7 @@
                             <td>${item.getPerson().getGender()}</td>
                             <td>${item.getPerson().getAdrress().toString()}</td>
                             <td>${item.getPerson().getContact().getPhone()}</td>
-                            <td><a href="<c:url value='/book?select=${item.getPerson().getName()}'/> ">
+                            <td><a href="<c:url value='/book?idCustomer=${item.getId()}'/> ">
                                     <button style="background: aqua; color: black;"type="button">Select</button></a></td>
                         </tr>
                         </c:forEach>

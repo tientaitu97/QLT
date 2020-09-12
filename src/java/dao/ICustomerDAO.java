@@ -17,7 +17,7 @@ public interface ICustomerDAO {
     List<Customer> findAll();
 
     List<Customer> findByName(String name);
-
+    Customer getCustomerById(String id);
     int create(String name, String points, String age, String gender, String address, String phone);
 
     int createAddress(String address);

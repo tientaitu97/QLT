@@ -7,47 +7,62 @@ package dao.impl;
 
 import dao.IBillDAO;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Bill;
 
 /**
  *
  * @author TienTaiTu
  */
-public class BillDAO implements IBillDAO{
+public class BillDAO implements IBillDAO {
 
     @Override
-    public List<Bill> findAll() {
-      return null;
+    public int CreateBill(String createDate, String endDate, String customerId, String bookId) {
+        String sqlInsertContact = "INSERT INTO QUANLITRUYEN.BILL(ID,create_date,end_date,customer_id,book_id) VALUE (?,?,?,?,?)";
+        Connection connection = ConnectToDatabase.getConnect();
+        PreparedStatement statement = null;
+        int id = getAutoId("QUANLITRUYEN.BILL");
+        if (connection != null) {
+            try {
+                java.util.Date date = new java.util.Date();
+                statement = connection.prepareStatement(sqlInsertContact);
+                statement.setInt(1, id);
+                statement.setString(2, createDate);
+                statement.setString(3, endDate);
+                statement.setString(4, customerId);
+                statement.setString(5, bookId);
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }finally {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        return id;
     }
 
-    @Override
-    public Bill CreateBill(String id, String name) {
-//         Bill results = new Bill();
-//         
-//        String sql = "";
-//        Connection connection = ConnectToDatabase.getConnect();
-//        PreparedStatement statement = null;
-//        ResultSet rs = null;
-//        if(connection != null){
-//            try{
-//             statement = connection.prepareStatement(sql);
-//             statement.setString(1, name);
-//             rs = statement.executeQuery();
-//              while (rs.next()){
-//                
-//                
-//                results.add(bill);
-//                
-//            }
-//            return results;
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        }
-      return null;
+    private int getAutoId(String table) {
+        try {
+            String sqlGetAutoId = "SELECT (MAX(ID)+1) AS AUTO_ID FROM " + table;
+            ResultSet rs = ConnectToDatabase.selectData(sqlGetAutoId);
+            if (rs.next()) {
+                return rs.getInt("AUTO_ID");
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return 0;
     }
-    
 }

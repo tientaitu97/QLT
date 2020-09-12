@@ -25,26 +25,30 @@ public class CreateCustomerController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
+       
+ RequestDispatcher rd = req.getRequestDispatcher("view/createCustomer.jsp");
+        rd.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+ try {
             String nameCustomer = req.getParameter("nameCustomer");
             String points = req.getParameter("points");
             String age = req.getParameter("age");
             String gender = req.getParameter("gender");
             String address = req.getParameter("address");
             String contact = req.getParameter("contact");
-
-            customerDao.create(nameCustomer, points, age, gender, address, contact);
+            if(nameCustomer != null){
+                int idCustomer = customerDao.create(nameCustomer, points, age, gender, address, contact);
+                req.setAttribute("idCustomer", idCustomer);
+            }
+            
         } catch (Exception e) {
             throw e;
         }
 
         RequestDispatcher rd = req.getRequestDispatcher("view/createCustomer.jsp");
         rd.forward(req, resp);
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
     }
 }

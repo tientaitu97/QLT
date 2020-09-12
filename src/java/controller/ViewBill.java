@@ -5,35 +5,35 @@
  */
 package controller;
 
+import dao.impl.BillDAO;
 import dao.impl.BookDAO;
+import dao.impl.CustomerDAO;
 import java.io.IOException;
-import javax.jws.WebService;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Customer;
 
 
 /**
  *
- * @author admin
+ * @author TienTaiTu
  */
-@WebServlet("/book")
-public class BookController extends HttpServlet{
-       BookDAO bookDao = new BookDAO();
+@WebServlet("/viewBill")
+public class ViewBill extends HttpServlet{
+       private BookDAO bookDao = new BookDAO();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("search");
-        String idCustomer = req.getParameter("idCustomer");
+        String idBook = req.getParameter("idBook");
+        String idCustomer = req.getParameter("idCustomer");  
+        Customer customer = new CustomerDAO().getCustomerById(idCustomer);
+        req.setAttribute("nameCustomer", customer.getPerson().getName());
         req.setAttribute("idCustomer", idCustomer);
-        if(name == null || name.equals("")){
-            req.setAttribute("book", bookDao.findAll());
-        } else{
-            req.setAttribute("book",bookDao.findByName(name));
-        }
-       RequestDispatcher rd = req.getRequestDispatcher("view/book.jsp");
+        req.setAttribute("book", bookDao.getBookById(idBook));
+       RequestDispatcher rd = req.getRequestDispatcher("viewBill.jsp");
         rd.forward(req, resp);
     }
 
@@ -41,5 +41,6 @@ public class BookController extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        
     }
+    
     
 }

@@ -15,4 +15,5 @@ import model.Book;
 public interface IBookDAO {
     List<Book> findAll();
     List<Book> findByName(String name);
+    Book getBookById(String id);
 }
